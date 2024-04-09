@@ -1,13 +1,7 @@
 .header {
-  display: none;
   background-color: var(--light-text);
-
-  position: fixed;
-  top: 0;
   max-width: 1440px;
   margin: 0 auto;
-  height: 100vh;
-  z-index: 2;
 }
 
 .header-wrapper {
@@ -16,7 +10,6 @@
   justify-content: center;
   align-items: center;
   padding: 15px 0;
-  margin: 0 auto;
 }
 
 .logo-link {
@@ -34,19 +27,16 @@
 }
 
 .nav {
+  order: 2;
+}
+
+.nav.mobile {
+  display: block;
   order: 4;
 }
 
 .nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-
-  flex-direction: column;
-  min-width: 100vw;
-  margin-top: 71px;
-  margin-bottom: 71px;
+  display: none;
 }
 
 .nav-item {
@@ -66,32 +56,77 @@
 }
 
 .tel {
-  order: 5;
+  display: none;
+
   letter-spacing: 0.01em;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-
-  min-width: 100vw;
-  margin-bottom: 71px;
 
   cursor: pointer;
   transition: color 250ms linear;
 }
 
 /* close btn */
-.close-menu-btn {
+.open-menu-btn, .close-menu-btn {
   background-color: transparent;
   margin-left: 15px;
   border: none;
   order: 3;
 }
 
-.close-svg {
+.open-svg, .close-svg {
   width: 25px;
   height: 25px;
 }
 
+/* MOBILE MENU */
+.mobile-menu {
+  background-color: var(--light-text);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  margin: 0 auto;
+
+  position: fixed;
+  top: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
+  z-index: 2;
+
+  opacity: 1;
+  transition: opacity 250ms linear;
+}
+
+.nav.mobile {
+  order: 4;
+}
+
+.nav-list.mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  flex-direction: column;
+  min-width: 100vw;
+  margin-top: 71px;
+  margin-bottom: 71px;
+}
+
+.tel.mobile {
+  display: inline-block;
+  order: 5;
+
+  min-width: 100vw;
+  margin-bottom: 71px;
+}
+
+/* MEDIA */
 @media screen and (min-width: 1440px) {
   .header {
     position: static;
@@ -106,17 +141,20 @@
 
   .nav-list {
     order: 3;
+    display: flex;
     flex-direction: row;
-    min-width: unset;
-    margin-top: unset;
-    margin-bottom: unset;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
   }
 
   .tel {
+    display: inline-block;
     order: 4;
     min-width: unset;
     margin-bottom: unset;
   }
+
   .stay-in-touch {
     order: 5;
   }
@@ -126,7 +164,7 @@
     height: 30px;
   }
 
-  .close-menu-btn {
+  .close-menu-btn, .open-menu-btn {
     display: none;
   }
 }

@@ -22,14 +22,28 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
+  margin: 0;
 }
 
 main {
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.is-hidden {
+  pointer-events: none;
+  opacity: 0;
 }
 
 /* BUTTONS */
@@ -60,6 +74,10 @@ main {
   border: 1px solid var(--accent-color);
 }
 
+.stay-in-touch {
+  width: 100px;
+}
+
 .agree-button {
   width: 70px;
   height: 35px;
@@ -69,6 +87,10 @@ main {
 
 /* lang buttons */
 .lang-buttons {
+  display: none;
+}
+
+.lang-buttons.mobile {
   order: 6;
   display: flex;
   align-items: center;
@@ -100,10 +122,29 @@ main {
     background-color: var(--accent-color);
     color: var(--light-text);
     border: none;
+  width: 140px;
   }
 
   .agree-button {
     width: 100px;
     height: 45px;
   }
+
+    .lang-buttons {
+      display: flex;
+      order: 6;
+      align-items: center;
+      width: 60px;
+    }
+  
+    .lang-button {
+      width: 30px;
+      height: 30px;
+      text-transform: uppercase;
+    }
+  
+    .moskal-button {
+      color: var(--accent-color);
+      background-color: transparent;
+    }
 }
