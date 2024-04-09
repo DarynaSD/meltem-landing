@@ -1,0 +1,3 @@
+.hero-section {
+    background-image: linear-gradient(var(--main-lighter), var(--main-darker));
+}
