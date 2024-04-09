@@ -1,6 +1,7 @@
 @import url('./reset.css');
 @import url('./hero.css');
 @import url('./header.css');
+@import url('./popup.css');
 
 :root {
   font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -10,10 +11,10 @@
 
   --text-color: #333333;
   --light-text: #ffffff;
-  --accent-color: #859BA6;
+  --accent-color: #859ba6;
   --main-lighter: rgba(247, 249, 251, 1);
   --main-darker: rgba(212, 227, 236, 1);
-  
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,19 +23,20 @@
 }
 
 body {
-height: 100vh;
+  height: 100vh;
 }
 
-.container {
-  width: 100%;
+main {
+  position: relative;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 /* BUTTONS */
 .button {
   font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+  font-size: 12px;
+  font-weight: 500;
 
   width: 140px;
   height: 45px;
@@ -47,12 +49,22 @@ height: 100vh;
 }
 
 .primary {
-background-color: var(--accent-color);
-color: var(--light-text);
+  background-color: var(--accent-color);
+  color: var(--light-text);
 }
 
-.secondary {
+.secondary,
+.stay-in-touch {
+  background-color: var(--light-text);
   color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.agree-button {
+  width: 70px;
+  height: 35px;
+  padding: 10px 15px;
+  margin-left: 12px;
 }
 
 /* lang buttons */
@@ -75,7 +87,7 @@ color: var(--light-text);
 }
 
 @media screen and (min-width: 1440px) {
-.container {
+  .container {
     max-width: 1440px;
     padding: 30px 60px;
   }
@@ -83,5 +95,15 @@ color: var(--light-text);
   .button {
     font-size: 16px;
   }
-}
 
+  .stay-in-touch {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+  }
+
+  .agree-button {
+    width: 100px;
+    height: 45px;
+  }
+}
