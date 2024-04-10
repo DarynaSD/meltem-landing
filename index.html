@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/meltem-landing/assets/favicon-ec6de81b.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meltem</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,8 +14,11 @@
     />
     
     <script type="module" crossorigin src="/meltem-landing/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/meltem-landing/assets/index-0b05980d.css">
+    <link rel="modulepreload" crossorigin href="/meltem-landing/assets/vendor-23adcde2.js">
+    <link rel="stylesheet" href="/meltem-landing/assets/vendor-b51df72b.css">
+    <link rel="stylesheet" href="/meltem-landing/assets/index-435c6fb0.css">
   </head>
+
   <body>
     <header class="header">
 <!-- header -->
@@ -99,18 +103,165 @@
 
 </header>
 
-        <main>
-        <section class="hero-section">
-             <h1>Meltem</h1>
-              <img src="/meltem-landing/assets/hero-image-0c1e97db.png" alt="відцентрований витяжний вентилятор" />
-  
-            </section>
+    <main>
+  <section class="hero-section">
+    <div class="hero-main-wrapper">
+      <h1>Meltem</h1>
+      <p class="hero-info main">
+        Meltem &ndash; це гарантовано якісне вентиляційне обладнання від
+        німецького заводу.
+      </p>
 
-            <div class="cookies-popup">
-                <p>Використовуючи цей сайт, ви даєте згоду на роботу з файлами <a href="../index.html" target="_blank" class="popup-link">cookies</a>.</p>
-                <button type="button" class="button secondary agree-button" >Згоден</button>
-            </div>
-    </main>
+      <button type="button" class="button primary button-hero-prod">
+        Продукція
+      </button>
+    </div>
+
+    <div class="hero-add-wrapper">
+      <p class="hero-info">Відцентровий витяжний вентилятор</p>
+      <h2 class="meltem-h">Meltem V-II 30-N</h2>
+      <button class="button secondary button-hero-det">Детальніше</button>
+    </div>
+
+    <!-- swiper -->
+    <!-- Slider main container -->
+    <div class="swiper image-slider">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper custom-image-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="slider-image-wrapper">
+            <img
+              src="/meltem-landing/assets/hero-image-0c1e97db.png"
+              alt="Відцентровий витяжний вентилятор"
+              class="slider-img"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider-image-wrapper">
+            <img
+              src="/meltem-landing/assets/hero-image-0c1e97db.png"
+              alt="Відцентровий витяжний вентилятор"
+              class="slider-img"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider-image-wrapper">
+            <img
+              src="/meltem-landing/assets/hero-image-0c1e97db.png"
+              alt="Відцентровий витяжний вентилятор"
+              class="slider-img"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider-image-wrapper">
+            <img
+              src="/meltem-landing/assets/hero-image-0c1e97db.png"
+              alt="Відцентровий витяжний вентилятор"
+              class="slider-img"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider-image-wrapper">
+            <img
+              src="/meltem-landing/assets/hero-image-0c1e97db.png"
+              alt="Відцентровий витяжний вентилятор"
+              class="slider-img"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider-image-wrapper">
+            <img
+              src="/meltem-landing/assets/hero-image-0c1e97db.png"
+              alt="Відцентровий витяжний вентилятор"
+              class="slider-img"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- swiper -->
+  </section>
+
+  <!-- COOKIE POPUP -->
+  <div class="cookies-popup">
+    <p>
+      Використовуючи цей сайт, ви даєте згоду на роботу з файлами
+      <a href="../index.html" target="_blank" class="popup-link">cookies</a>.
+    </p>
+    <button type="button" class="button secondary agree-button">Згоден</button>
+  </div>
+
+  <!-- FEDDBACK POPUP -->
+  <div class="feedback-popup is-hidden">
+    <svg class="feedback-svg">
+      <use href="/meltem-landing/assets/sprite-eb7930a5.svg#icon-quality"></use>
+    </svg>
+    <p class="feedback-text">Дякуємо за заявку!</p>
+    <p>Ваші дані успішно надіслані!</p>
+  </div>
+</main>
+
+    <div class="backdrop is-hidden">
+  <div class="modal">
+    <div class="modal-text-wrapper">
+      <h2 class="modal-title title">Залишайте заявку</h2>
+      <p class="modal-text accent-dark">
+        Ми зв&apos;яжемося з вами найближчим часом.
+      </p>
+      <form class="form-modal" name="contact-form" autocomplete="off">
+        <label class="label"
+          ><input
+            class="input"
+            type="text"
+            name="userName"
+            id="user-name"
+            placeholder="Ваше ім'я*"
+            required
+        /></label>
+
+        <div class="input-wrapper">
+          <label class="label" for="user-tel"></label>
+          <input
+            class="input input-tel"
+            type="text"
+            name="user-tel"
+            id="user-tel"
+            placeholder="+380-00-000-00-00*"
+            pattern="^\+[0-9]{12}"
+            required
+          />
+          <div class="flag-img"></div>
+        </div>
+
+        <button class="button primary modal-button" type="submit ">
+          Відправить
+        </button>
+      </form>
+      <p class="contact-policy">
+        Натискаючи кнопку &quot;Надіслати&quot;, ви погоджуєтесь з
+        <a class="contact-policy-link" href="#"
+          >Правилами обробки персональних даних</a
+        >.
+      </p>
+    </div>
+
+    <button class="close-menu-btn modal-close-btn" type="button">
+      <svg class="close-svg">
+        <use href="/meltem-landing/assets/sprite-eb7930a5.svg#icon-close-burger"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+
     
   </body>
+
 </html>
