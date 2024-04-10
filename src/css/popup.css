@@ -1,39 +1,93 @@
 .cookies-popup {
-max-width: 290px;
-width: 290px;
-height: 78px;
-padding: 15px 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  max-width: 290px;
+  width: 290px;
+  height: 78px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-font-size: 12px;
-font-weight: 400;
-background-color: var(--light-text);
-border-radius: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: var(--light-text);
+  border-radius: 5px;
 
-position: fixed;
-bottom: 23px;
-left: 50%;
-transform: translateX(-50%);
+  position: fixed;
+  bottom: 23px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .popup-link {
-    color: var(--accent-color);
-    text-decoration: underline;
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* feedback */
+.feedback-popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 209px;
+  height: 257px;
+  padding: 40px;
+
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+
+  background-color: var(--light-text);
+  border-radius: 4px;
+
+  position: fixed;
+
+  bottom: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+.feedback-text {
+    font-size: 24px;
+        font-weight: 500;
+}
+
+.feedback-svg {
+    width: 40px;
+    height: 40px;
 }
 
 @media screen and (min-width: 1440px) {
-.cookies-popup {
-        max-width: unset;
-        width: 460px;
-        height: 785x;
-        padding: 20px 30px;
-        font-size: 16px;
+  .cookies-popup {
+    max-width: unset;
+    width: 460px;
+    height: 785x;
+    padding: 20px 30px;
+    font-size: 16px;
 
-        bottom: 40px;
-        right: 60px;
-        left: unset;
-        transform: translateX(0);
-    }
+    bottom: 40px;
+    right: 60px;
+    left: unset;
+    transform: translateX(0);
+  }
+
+  .feedback-popup {
+    gap: 30px;
+    width: 378px;
+    height: 378px;
+    font-size: 16px;
+    padding: 60px 80px;
+  }
+
+  .feedback-text {
+      font-size: 40px;
+  }
+
+  .feedback-svg {
+      width: 80px;
+      height: 80px;
+  }
 }
