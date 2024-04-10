@@ -1,12 +1,85 @@
 .hero-section {
     background-image: linear-gradient(var(--main-lighter), var(--main-darker));
+    width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 15px;
+    
+    padding: 40px 15px 22px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 190px;
 }
+
+.hero-main-wrapper {
+    width: 200px;
+    align-self: flex-start;
+}
+
+.hero-add-wrapper {
+    width: 160px;
+    align-self: flex-end;
+}
+
+.hero-info {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.hero-info.main {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.meltem-h {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
 
 @media screen and (min-width: 1440px) {
 .hero-section {
     padding: 80px 80px 80px 60px;
+    height: 545px;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: unset;
+}
+
+.hero-main-wrapper {
+    width: 340px;
+    align-self: center;
+}
+
+.hero-add-wrapper {
+    width: 320px;
+    align-self: flex-end;
+}
+
+.hero-info {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.hero-info.main {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.meltem-h {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 }
