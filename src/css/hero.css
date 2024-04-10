@@ -114,5 +114,8 @@ h1 {
 .image-slider {
     position: absolute;
     width: 560px;
+
+    left: 50%;
+    transform: translateX(-50%);
 }
 }
