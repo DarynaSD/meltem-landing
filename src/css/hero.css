@@ -1,121 +1,159 @@
 .hero-section {
-    position: relative;
-    background-image: linear-gradient(var(--main-lighter), var(--main-darker));
-    width: 100%;
-    max-width: 1440px;
-    min-width: 0;
-    margin: 0 auto;
-    
-    padding: 40px 15px 22px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+  position: relative;
+  background-image: linear-gradient(var(--main-lighter), var(--main-darker));
+  width: 100%;
+  max-width: 1440px;
+  min-width: 0;
+  margin: 0 auto;
+
+  padding: 40px 15px 22px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .hero-main-wrapper {
-    order: 1;
-    width: 200px;
-    align-self: flex-start;
+  order: 1;
+  width: 200px;
+  align-self: flex-start;
+  z-index: 4;
 }
 
 .hero-add-wrapper {
-    order: 3;
-    width: 160px;
-    align-self: flex-end;
+  order: 3;
+  width: 160px;
+  align-self: flex-end;
+  padding-bottom: 20px;
 }
 
 .hero-info {
-    font-size: 14px;
-    font-weight: 300;
-    margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 5px;
 }
 
 .hero-info.main {
-    font-size: 13px;
-    margin-bottom: 15px;
+  font-size: 13px;
+  margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 
 .meltem-h {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 /* slider */
 
 .image-slider {
-    position: relative;
-    width: 240px;
-    order: 2;
-    padding-bottom: 60px;
+  position: relative;
+  width: 240px;
+  order: 2;
+  padding-bottom: 60px;
 }
 
-.image-slider .swiper-horizontal>.swiper-pagination-progressbar,
+.swiper-slide.custom-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slider-image-wrapper.custom-slide-image {
+  display: block;
+  width: 240px;
+}
+
+.image-slider .swiper-horizontal > .swiper-pagination-progressbar,
 .image-slider .swiper-pagination-progressbar.swiper-pagination-horizontal {
-    bottom: 0px;
-    top: unset;
+  bottom: 0px;
+  top: unset;
 }
 
 .image-slider .swiper-pagination-progressbar {
-    background-color: var(--light-text);
+  background-color: var(--light-text);
 }
 
-.image-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background-color: var(--accent-color);
+.image-slider
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
+  background-color: var(--accent-color);
 }
 
-
-@media screen and (min-width: 1440px) {
-.hero-section {
-    padding: 80px 80px 80px 60px;
+@media screen and (min-width: 896px) {
+  .hero-section {
     height: 545px;
     flex-direction: row;
     justify-content: space-between;
     row-gap: unset;
-}
+  }
 
-.hero-main-wrapper {
-    width: 340px;
-    align-self: center;
-}
-
-.hero-add-wrapper {
-    width: 320px;
+  .hero-add-wrapper {
     align-self: flex-end;
+    padding-bottom: 61px;
+  }
+
+  .hero-main-wrapper {
+    position: absolute;
+    align-self: center;
+  }
+
+  .image-slider {
+    width: 100%;
+  }
+
+  .swiper-slide.custom-slide {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .slider-image-wrapper.custom-slide-image {
+    width: 450px;
+    max-width: 560px;
+    padding-bottom: 61px;
+  }
 }
 
-.hero-info {
+@media screen and (min-width: 1440px) {
+  .hero-section {
+    padding: 80px 80px 80px 60px;
+    height: 545px;
+  }
+
+  .hero-add-wrapper {
+    width: 320px;
+  }
+
+  .hero-info {
     font-size: 24px;
     margin-bottom: 10px;
-}
+  }
 
-.hero-info.main {
+  .hero-info.main {
     font-size: 20px;
     margin-bottom: 30px;
-}
+  }
 
-h1 {
+  h1 {
     font-size: 50px;
     margin-bottom: 30px;
-}
+  }
 
-.meltem-h {
+  .meltem-h {
     font-size: 24px;
     margin-bottom: 20px;
-}
+  }
 
-/* slider */
-.image-slider {
-    position: absolute;
+  /* slider */
+  .slider-image-wrapper.custom-slide-image {
     width: 560px;
-
-    left: 50%;
-    transform: translateX(-50%);
-}
+  }
 }
