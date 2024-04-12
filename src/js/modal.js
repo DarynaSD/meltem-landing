@@ -3,7 +3,7 @@ import { createModalMarkUp } from "./modalMarkup";
 import { createPopupMakrup } from "./feedback-popup";
 
 const modal = document.querySelector(".backdrop");
-const modalBtnOpen = document.querySelector(".stay-in-touch");
+const modalBtnOpen = document.querySelectorAll(".stay-in-touch");
 
 const openModal = () => {
   modal.innerHTML = "";
@@ -47,4 +47,4 @@ const openPopup = (event) => {
 }
 
 
-modalBtnOpen.addEventListener("click", openModal);
+modalBtnOpen.forEach(b => b.addEventListener("click", openModal));

@@ -12,7 +12,8 @@
   background-color: var(--light-text);
   border-radius: 5px;
 
-  position: fixed;
+  position: absolute;
+  z-index: 7;
   bottom: 23px;
   left: 50%;
   transform: translateX(-50%);

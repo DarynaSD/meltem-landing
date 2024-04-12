@@ -96,7 +96,7 @@
   max-width: 1440px;
   margin: 0 auto;
   height: 100vh;
-  z-index: 2;
+  z-index: 4;
 
   opacity: 1;
   transition: opacity 250ms linear;
