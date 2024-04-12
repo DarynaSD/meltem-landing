@@ -1,71 +1,50 @@
+import { createCustomMask } from "./mask";
+import { createModalMarkUp } from "./modalMarkup";
+import { createPopupMakrup } from "./feedback-popup";
+
 const modal = document.querySelector(".backdrop");
 const modalBtnOpen = document.querySelector(".stay-in-touch");
-const modalBtnClose = document.querySelector(".modal-close-btn");
 
 const openModal = () => {
   modal.innerHTML = "";
-	modal.insertAdjacentHTML("beforeend", createModalMarkUp());
+  modal.insertAdjacentHTML("beforeend", createModalMarkUp());
+  createCustomMask();
   modal.classList.toggle("is-hidden");
+
+  const modalBtnClose = document.querySelector(".modal-close-btn");
+  const form = document.querySelector(".form-modal");
+
+  console.log(modalBtnClose)
+  modalBtnClose.addEventListener("click", closeModal);
+  form.addEventListener("submit", openPopup);
 };
 
 const closeModal = () => {
+  const modalBtnClose = document.querySelector(".modal-close-btn");
+  const form = document.querySelector(".form-modal");
+
 	modal.innerHTML = "";
-	modal.classList.add("is-hidden");
+  modal.classList.add("is-hidden");
+  modalBtnClose.removeEventListener("click", closeModal);
+  form.removeEventListener("submit", openPopup);
 };
 
-const createModalMarkUp = () => {
-  return `
-  <div class="modal">
-    <div class="modal-text-wrapper">
-      <h2 class="modal-title title">Залишайте заявку</h2>
-      <p class="modal-text accent-dark">
-        Ми зв&apos;яжемося з вами найближчим часом.
-      </p>
-      <form class="form-modal" name="contact-form" autocomplete="off">
-        <label class="label">
-<input
-            class="input"
-            type="text"
-            name="userName"
-            id="user-name"
-            placeholder="Ваше ім'я*"
-            required />
-</label >
+const openPopup = (event) => {
+  event.preventDefault();
+  closeModal();
 
-        <div class="input-wrapper">
-          <label class="label" for="user-tel"></label>
-          <input
-            class="input input-tel"
-            type="text"
-            name="user-tel"
-            id="user-tel"
-            placeholder="+380-00-000-00-00*"
-            pattern="^\+[0-9]{12}"
-            required
-          />
-          <div class="flag-img"></div>
-        </div>
+  const fdPopupContainer = document.querySelector(".feedback-popup");
+  const fdPopup = document.querySelector(".feedback-popup");
 
-        <button class="button primary modal-button" type="submit ">
-          Відправить
-        </button>
-      </form>
-      <p class="contact-policy">
-        Натискаючи кнопку &quot;Надіслати&quot;, ви погоджуєтесь з
-        <a class="contact-policy-link" href="#"
-          >Правилами обробки персональних даних</a
-        >.
-      </p>
-    </div>
+  fdPopupContainer.innerHTML = "";
+  fdPopupContainer.insertAdjacentHTML("beforeend", createPopupMakrup());
+  fdPopupContainer.classList.toggle("is-hidden");
 
-    <button class="close-menu-btn modal-close-btn" type="button">
-      <svg class="close-svg">
-        <use href="./img/sprite.svg#icon-close-burger"></use>
-      </svg>
-    </button>
-  </div>
-    `
+  setTimeout(() => {
+  fdPopupContainer.innerHTML = "";
+    fdPopup.classList.add("is-hidden");
+  }, 1000)
 }
 
+
 modalBtnOpen.addEventListener("click", openModal);
-modalBtnClose.addEventListener("click", closeModal);

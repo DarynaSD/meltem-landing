@@ -1,4 +1,5 @@
-<!-- <div class="backdrop is-hidden">
+export const createModalMarkUp = () => {
+  return `
   <div class="modal">
     <div class="modal-text-wrapper">
       <h2 class="modal-title title">Залишайте заявку</h2>
@@ -6,15 +7,15 @@
         Ми зв&apos;яжемося з вами найближчим часом.
       </p>
       <form class="form-modal" name="contact-form" autocomplete="off">
-        <label class="label"
-          ><input
+        <label class="label">
+<input
             class="input"
             type="text"
             name="userName"
             id="user-name"
             placeholder="Ваше ім'я*"
-            required
-        /></label>
+            required />
+</label >
 
         <div class="input-wrapper">
           <label class="label" for="user-tel"></label>
@@ -24,13 +25,15 @@
             name="user-tel"
             id="user-tel"
             placeholder="+380-00-000-00-00*"
-            pattern="^\+[0-9]{12}"
+            pattern="[\+]\d{3}\s[\(]\d{2}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+            minlength="17"
+            maxlength="17"
             required
           />
           <div class="flag-img"></div>
         </div>
 
-        <button class="button primary modal-button" type="submit ">
+        <button class="button primary modal-button" type="submit">
           Відправить
         </button>
       </form>
@@ -48,4 +51,5 @@
       </svg>
     </button>
   </div>
-</div> -->
+    `;
+};
